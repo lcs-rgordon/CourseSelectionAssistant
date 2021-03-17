@@ -12,6 +12,7 @@ class Store: ObservableObject {
     
     // MARK: Stored properties
     @Published var courses = Courses()
+    @Published var subjects = [String : [Course]]()
     
     // MARK: Initializer
     init(loadFromRemote: Bool = true) {
@@ -53,7 +54,11 @@ class Store: ObservableObject {
                     // Update the list of courses on the main thread
                     DispatchQueue.main.async {
                         
+                        // Set the list of courses that have been downloaded
                         self.courses.list = decodedCourses.list
+                        
+                        // Create a dictionary with courses grouped by curriculum (subject)
+                        self.subjects = Dictionary(grouping: self.courses.list, by: { $0.curriculum })
                         
                     }
 
@@ -84,6 +89,9 @@ class Store: ObservableObject {
                     
                     // Update the list of courses in this data store
                     self.courses.list = decodedCourses.list
+                    
+                    // Create a dictionary with courses grouped by curriculum (subject)
+                    self.subjects = Dictionary(grouping: self.courses.list, by: { $0.curriculum })
                     
                 } catch {
 

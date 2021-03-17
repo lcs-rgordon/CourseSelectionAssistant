@@ -17,8 +17,19 @@ struct ContentView: View {
     @ObservedObject var dataStore: Store
     
     var body: some View {
-        Text("There are \(dataStore.courses.list.count) courses in the list of courses obtained.")
-            .padding()
+        
+        // Start a list
+        List {
+            
+            // Iterate over the subjects
+            ForEach(Array(dataStore.subjects.keys.sorted()), id: \.self) { subject in
+                
+                Text(subject)
+                
+            }
+            
+        }
+        
     }
 }
 
