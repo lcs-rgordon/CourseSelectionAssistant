@@ -16,6 +16,8 @@
 		81771C1226027E820098CC80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81771BFD26027E810098CC80 /* ContentView.swift */; };
 		81771C1326027E820098CC80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81771BFE26027E820098CC80 /* Assets.xcassets */; };
 		81771C1426027E820098CC80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81771BFE26027E820098CC80 /* Assets.xcassets */; };
+		81C150B92602997C00DD4898 /* courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 81C150B82602997C00DD4898 /* courses.json */; };
+		81C150BA2602997C00DD4898 /* courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 81C150B82602997C00DD4898 /* courses.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,7 @@
 		81771C0B26027E820098CC80 /* CourseSelectionAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseSelectionAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81771C0D26027E820098CC80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81771C0E26027E820098CC80 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		81C150B82602997C00DD4898 /* courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courses.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 				8142F9EE26029390009EB6AC /* Store.swift */,
 				8142F9DC26028D3A009EB6AC /* Courses.swift */,
 				8142F9E226028E4C009EB6AC /* Course.swift */,
+				81C150B82602997C00DD4898 /* courses.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C150B92602997C00DD4898 /* courses.json in Resources */,
 				81771C1326027E820098CC80 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C150BA2602997C00DD4898 /* courses.json in Resources */,
 				81771C1426027E820098CC80 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

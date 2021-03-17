@@ -11,12 +11,12 @@ import SwiftUI
 struct CourseSelectionAssistantApp: App {
     
     // MARK: Stored properties
-    @StateObject private var store = Store()
+    @StateObject private var dataStore = Store()
     
     // MARK: Computed properties
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(dataStore: dataStore)
         }
     }
     
