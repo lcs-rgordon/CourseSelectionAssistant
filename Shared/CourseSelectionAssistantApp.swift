@@ -16,7 +16,9 @@ struct CourseSelectionAssistantApp: App {
     // MARK: Computed properties
     var body: some Scene {
         WindowGroup {
-            ContentView(dataStore: dataStore)
+            NavigationView {
+                SubjectsView(dataStore: dataStore)
+            }
         }
     }
     

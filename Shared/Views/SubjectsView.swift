@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SubjectsView.swift
 //  Shared
 //
 //  Created by Russell Gordon on 2021-03-17.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SubjectsView: View {
 
     // MARK: Stored properties
     
@@ -24,17 +24,21 @@ struct ContentView: View {
             // Iterate over the subjects
             ForEach(Array(dataStore.subjects.keys.sorted()), id: \.self) { subject in
                 
-                Text(subject)
+                // Pass the courses for this subject area to the next view
+                NavigationLink(destination: GradesWithinSubjectView(courses: dataStore.subjects[subject]!)) {
+                    Text(subject)
+                }
                 
             }
             
         }
+        .navigationTitle("Subjects")
         
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SubjectsView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(dataStore: testStore)
+        SubjectsView(dataStore: testStore)
     }
 }
