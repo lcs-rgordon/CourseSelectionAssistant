@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct CourseSelectionAssistantApp: App {
+    
+    // MARK: Stored properties
+    @StateObject private var store = Store()
+    
+    // MARK: Computed properties
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
+    
 }
