@@ -15,8 +15,13 @@ struct GradesWithinSubjectView: View {
     // MARK: Computed properties
     var coursesByGrade: [(key: Int, value: [Course])] {
         
+        // Only return courses offered at LCS
+        let filteredCourses = courses.filter({ course in
+            return course.offeredAtLcs == true
+        })
+        
         // Create a dictionary with courses grouped by grade level
-        return Dictionary(grouping: courses, by: { $0.grade }).sorted(by: { $0.key < $1.key } )
+        return Dictionary(grouping: filteredCourses, by: { $0.grade }).sorted(by: { $0.key < $1.key } )
         
     }
     
@@ -32,11 +37,15 @@ struct GradesWithinSubjectView: View {
                     // Iterate over the courses within this grade
                     ForEach(value.sorted(by: { $0.name < $1.name })) { course in
                         
-                        
-                        VStack(alignment: .leading) {
-                            Text(course.name)
-                            Text(course.type)
-                                .font(.caption)
+
+                        NavigationLink(destination: CourseDetailView(course: course)) {
+                            
+                            VStack(alignment: .leading) {
+                                Text(course.name)
+                                Text(course.type)
+                                    .font(.caption)
+                            }
+
                         }
                         
                         
