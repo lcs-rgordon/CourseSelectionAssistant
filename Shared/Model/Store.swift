@@ -11,7 +11,7 @@ import Foundation
 class Store: ObservableObject {
     
     // MARK: Stored properties
-    var courses = Courses()
+    @Published var courses = Courses()
     
     // MARK: Initializer
     init(loadFromRemote: Bool = true) {
